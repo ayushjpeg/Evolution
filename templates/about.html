@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hominid Prediction</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <!-- <div class="flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8"> -->
+    
+
+        <nav class="bg-white border-gray-200 bg-gray-400 dark:border-gray-700">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+              <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                  
+                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Species Prediction</span>
+              </a>
+              
+              <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white bg-gray-400 md:bg-gray-400 dark:border-gray-700">
+                    <li>
+                        <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                    </li>
+                  <li>
+                  <a href="/about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About Dataset</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="container px-5 py-18 mx-auto flex flex-wrap">
+            <div class="translations-content-container">
+              <div class="container p-3">
+                <div
+                  class="tab-content translations-content-item en visible py-3"
+                  id="en"
+                ></div>
+                <h1 className="text-4xl font-bold mb-6 "><strong>About Dataset:</strong></h1>
+              
+                <p className="py-1">
+                    In this dataset, we delve into the fascinating story of human evolution. With 12000 rows and 28 columns, this dataset covers a wide range of characteristics of different hominids, from the earliest consensual ancestors to modern Homo sapiens. This comprehensive compilation aims to facilitate the search for relationships between various key variables, thereby providing a more complete and detailed understanding of human evolution.
+                </p>
+                <br>
+                <br>
+                <h1 className="text-4xl font-bold mb-1 py-2 "><strong>Objectives:</strong>
+                    
+                </h1>
+              
+                <p className="py-1">
+                    The objective is to predict either the gender and species or whether they were bipedal or not.
+                </p>
+                <p className="py-1">Also, the objective is to avoid the overfeeding of the model, because there are several models that show signs of overfeeding.
+
+                </p>
+                <br>
+                <br>
+                <h2 className="text-3xl font-bold py-3 "><strong>About the Data:</strong> </h2>
+                <ul>
+                  <li>
+                    <p className="py-1">
+                      <strong>Genus & Species:</strong> This column contains the genus and specific name of the species. It provides taxonomic information about each hominid included in the dataset, allowing for precise identification.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Time : </strong> (categorical) This column indicates the time period during which each hominid species lived. It helps to establish chronological context and understand the temporal distribution of different hominid groups.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Location: </strong> (categorical) This column records the continent location where each hominid species lived.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Zone: </strong> (categorical) Describes either east, west, south or north of the continent
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Current Country: </strong> (categorical) Records the modern-day country associated with the location where each hominid species lived, facilitating geographical comparisons.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Habitat: </strong> (categorical) This column describes the typical habitat or environment inhabited by each hominid species. It provides information about the ecological niche and adaptation strategies of different hominids throughout history.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Cranial Capacity: </strong> (numeric) This column provides data on the cranial capacity of each hominid species. Cranial capacity is a key indicator of brain size and can offer insights into cognitive abilities and evolutionary trends.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Height: </strong> (numeric) Describes the average height or stature of each hominid species.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Incisor Size: </strong> (categorical) Indicates the size of the incisors in each hominid species.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Jaw Shape: </strong> (categorical) Describes the shape or morphology of the jaw in each hominid species.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Torus Supraorbital: </strong> (categorical) Specifies the shape or morphology of a supraorbital torus in each hominid species.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Prognathism: </strong> (categorical) Indicates the degree of facial prognathism or protrusion in each hominid species.
+                    </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Foramen Mágnum Position:  </strong> (categorical) Describes the position of the foramen magnum in each hominid species </p>
+                  </li>
+                  <li>
+                    <p className="py-1">
+                      <strong>Canine Size:  </strong> (categorical) Indicates the size of the canines in each hominid species.
+                    </p>
+                    </li>
+                    <li>
+                        <p className="py-1">
+                          <strong>Canines Shape: </strong> (categorical) Describes the shape of the canines in each hominid species, providing information about their dietary adaptations and social behavior.
+                       </p>
+                        </li>
+                        <li>
+                            <p className="py-1">
+                              <strong>Tooth Enamel: </strong>(categorical) Specifies the characteristics of tooth enamel in each hominid species, which may indicate aspects of dietary ecology and dental health.
+                              </p>
+                            </li>
+                    
+                            <li>
+                                <p className="py-1">
+                                  <strong>Tecno:  </strong> (categorical) Records the presence or absence of technological advancements.
+                                </p>
+                                </li>
+
+                                <li>
+                                    <p className="py-1">
+                                      <strong>Tecno Type:  </strong> (categorical) Describes the specific type or style of technology associated with each hominid species.
+                                    </p>
+                                    </li>
+
+                                    <li>
+                                        <p className="py-1">
+                                          <strong>Biped:  </strong> (categorical) Indicates whether each hominid species exhibited bipedal locomotion, a key characteristic distinguishing humans from other primates..
+                                        </p>
+                                        </li>
+
+                                        <li>
+                                            <p className="py-1">
+                                              <strong>Arms: </strong> (categorical) Describes the morphology or characteristics of the arms in each hominid species, offering insights into their locomotor adaptations and manual dexterity.</p>
+                                            </li>
+                                            <li>
+                                                <p className="py-1">
+                                                  <strong>Foots: </strong> (categorical) Specifies the morphology or characteristics of the feet in each hominid species, providing information about their locomotor adaptations and foot anatomy.</p>
+                                                </li>
+                                                <li>
+                                                    <p className="py-1">
+                                                      <strong>Diet: </strong> (categorical) Characterizes the dietary habits or preferences of each hominid species </p>
+                                                    </li>
+                                                    <li>
+                                                        <p className="py-1">
+                                                          <strong>Sexual Dimorphism: </strong> (categorical) Indicates the degree of sexual dimorphism. </p>
+                                                        </li>
+                                                        <li>
+                                                            <p className="py-1">
+                                                              <strong>Hip: </strong> (categorical) Describes the size of the hip in each hominid species. </p>
+                                                            </li>
+
+                                                            <li>
+                                                                <p className="py-1">
+                                                                  <strong>Anatomy: </strong> (categorical) Provides additional information about the anatomical features or characteristics of each hominid species, aiding in comprehensive morphological analyses. </p>
+                                                                </li>
+
+                                                                <li>
+                                                                    <p className="py-1">
+                                                                      <strong>Vertical Front: </strong> (categorical) Specifies the presence or absence of verticality or curvature of the frontal bone in each hominid species, providing information about their cranial morphology. </p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p className="py-1">
+                                                                          <strong>Migrated: </strong> (categorical) Indicates whether each hominid species exhibited migration or movement to different geographical areas, offering insights into their dispersal patterns and population dynamics. </p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p className="py-1">
+                                                                              <strong>Skeleton: </strong> (categorical) Describes additional information about anatomy. </p>
+                                                                            </li>
+
+                </ul>
+                
+                 
+              </div>
+            </div>
+          </div>
+
+</body>
+</html>
