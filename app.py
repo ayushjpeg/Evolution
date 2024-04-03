@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import joblib
-import pandas as pd
+
 
 app = Flask(__name__)
 
@@ -139,10 +139,8 @@ def predict():
         features.extend([1 if skeleton == s else 0 for s in ['refined', 'robust']])
     except:
         pass
+        
     # Make prediction
-    from sklearn.preprocessing import StandardScaler
-    import joblib
-
     scaler = joblib.load('scaler.pkl')
 
     X_test_scaled = scaler.transform([features])
@@ -156,4 +154,5 @@ def predict():
     return render_template('result.html', prediction=prediction)
 
 if __name__ == '__main__':
-    app.run
+    app.run(debug=True)
+
