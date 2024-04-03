@@ -142,11 +142,11 @@ def predict():
     scaler = joblib.load('scaler.pkl')
 
     X_test_scaled = scaler.transform([features])
-    print(X_test_scaled)
+
 
     prediction = model.predict(X_test_scaled)
 
-    print(prediction)
+
 
     # Render the result page with prediction
     return render_template('result.html', prediction=prediction)
