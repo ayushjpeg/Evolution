@@ -1,4 +1,4 @@
 flask
 joblib
-scikit-learn==12.0.1
+scikit-learn==1.2.2
 gunicorn
