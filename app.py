@@ -5,7 +5,11 @@ import joblib
 app = Flask(__name__)
 
 # Load the model
-model = joblib.load('logistic_regression_model.pkl')
+model = joblib.load('random_forest_model.pkl')
+print(model)
+
+#Load the Scalar
+scaler = joblib.load('scaler.pkl')
 
 # Render the form page
 @app.route('/')
@@ -16,9 +20,14 @@ def form():
 def about():
     return render_template('about.html')
 
+@app.route('/model')
+def model_data():
+    return render_template('Model_training.html')
+
 # Handle form submission and provide prediction
 @app.route('/predict', methods=['POST'])
 def predict():
+    global model, scaler
     # Get form data
     features = []
     try:
@@ -141,16 +150,12 @@ def predict():
         pass
         
     # Make prediction
-    scaler = joblib.load('scaler.pkl')
-
     X_test_scaled = scaler.transform([features])
-
     prediction = model.predict(X_test_scaled)
 
 
-
     # Render the result page with prediction
-    return render_template('result.html', prediction=prediction)
+    return render_template('result.html', prediction=prediction[0])
 
 if __name__ == '__main__':
     app.run(debug=True)
