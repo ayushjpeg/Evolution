@@ -71,7 +71,7 @@ def predict():
         features.extend([1 if prognathism == p else 0 for p in [ 'high','medium', 'medium-high', 'reduced', 'very high' ]])
 
         # Foramen MAignum Position
-        foramen_maignum = request.form['Foramen_MAignum_Position']
+        foramen_maignum = request.form['Foramen_Mágnum_Position']
         features.extend([1 if foramen_maignum == pos else 0 for pos in ['modern','posterior', 'semi-anterior' ]])
 
         # Canine Size
@@ -136,8 +136,16 @@ def predict():
     except:
         pass
     # Make prediction
-    print([features])
-    prediction = model.predict([features])
+    from sklearn.preprocessing import StandardScaler
+    import joblib
+
+    scaler = joblib.load('scaler.pkl')
+
+    X_test_scaled = scaler.transform([features])
+    print(X_test_scaled)
+
+    prediction = model.predict(X_test_scaled)
+
     print(prediction)
 
     # Render the result page with prediction
