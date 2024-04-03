@@ -12,6 +12,10 @@ model = joblib.load('logistic_regression_model.pkl')
 def form():
     return render_template('predict.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 # Handle form submission and provide prediction
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -152,4 +156,4 @@ def predict():
     return render_template('result.html', prediction=prediction)
 
 if __name__ == '__main__':
-    app.run()
+    app.run

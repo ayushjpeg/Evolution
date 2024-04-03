@@ -4,48 +4,125 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hominid Prediction</title>
-  <link rel="stylesheet" href="static/styles.css">
+  <link rel="stylesheet" href="/static/css/main.css">
 </head>
-<h1>Species Prediction Form</h1>
-<form action="/predict" method="post">
-    <label for="Time">Time:</label>
-    <input type="number" name="Time" id="Time" required><br><br>
-
+<body>
+    <!-- <div class="flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8"> -->
     
 
+        <nav class="bg-white border-gray-200 bg-gray-400 dark:border-gray-700">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+              <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                  
+                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Species Prediction</span>
+              </a>
+              
+              <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white bg-gray-400 md:bg-gray-400 dark:border-gray-700">
+                    <li>
+                        <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                    </li>
+                  <li>
+                  <a href="/about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About Dataset</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
 
-   
+
+
+
+
+
+
+<div class="mt-10 py-5 sm:mx-auto sm:w-full sm:max-w-sm">
+    <!-- <div class="py-5 px-20">
+        <h2 className="mx-5 mt-5 text-5xl text-center font-bold">
+        Species Prediction Form
+      </h2>
+    </div> -->
+<form action="/predict" className="space-y-6"  method="post">
+
+    <div className="mx-auto flex my-4">
+        <div className="px-2 w-1/2">
+          <div class=" mb-4">
+            <label for="Time" class="leading-7 text-sm text-gray-600">
+              Time
+            </label>
+            <input
+              type="number"
+              id="Time"
+              name="Time"
+              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              required
+              />
+          </div>
+    </div>
+
     
-    <label for="Location">Location:</label>
-    <select name="Location" id="Location" required>
-        <option value="Asia">Asia</option>
-        <option value="Africa">Africa</option>
-        <option value="Europe">Europe</option>
-    </select><br><br>
+        <div className="px-2 w-1/2">
+          <div class=" mb-4">
+            <label for="Location" class="leading-7 text-sm text-gray-600">
+              Location
+            </label>
+            <select name="Location" id="Location" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            required>
+                <option value="Asia">Asia</option>
+                <option value="Africa">Africa</option>
+                <option value="Europe">Europe</option>
+            </select>
+           
+          </div>
+    </div>
+
+  
+        <div className="px-2 w-1/2">
+          <div class=" mb-4">
+            <label for="Zone" class="leading-7 text-sm text-gray-600">
+              Zone
+            </label>
+            <select name="Zone" id="Zone" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            required>
+                <option value="west">West</option>
+                <option value="central">Central</option>
+                <option value="oriental">Oriental</option>
+                <option value="south">South</option>
+            </select>
+            
+          </div>
+    </div>
+
+
+        <div className="px-2 w-1/2">
+          <div class=" mb-4">
+            <label for="current-country" class="leading-7 text-sm text-gray-600">
+                Current Country
+            </label>
+            <select name="current-country" id="current-country" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+                <option value="Georgia">Georgia</option>
+                <option value="Germany">Germany</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Republic of Chad">Republic of Chad</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Spain">Spain</option>
+                <option value="Ethiopia">Ethiopia</option>
+            </select>
+           
+            
+          </div>
+    </div>
     
-    <label for="Zone">Zone:</label>
-    <select name="Zone" id="Zone" required>
-        <option value="west">West</option>
-        <option value="central">Central</option>
-        <option value="oriental">Oriental</option>
-        <option value="south">South</option>
-    </select><br><br>
-    
-    <label for="current-country">Current Country:</label>
-    <select name="current-country" id="current-country" required>
-        <option value="Georgia">Georgia</option>
-        <option value="Germany">Germany</option>
-        <option value="Indonesia">Indonesia</option>
-        <option value="Kenya">Kenya</option>
-        <option value="Republic of Chad">Republic of Chad</option>
-        <option value="South Africa">South Africa</option>
-        <option value="Spain">Spain</option>
-        <option value="Ethiopia">Ethiopia</option>
-    </select><br><br>
-    
-    <label for="Habitat">Habitat:</label>
-    <select name="Habitat" id="Habitat" required>
-        <option value="forest">Forest</option>
+
+        <div className="px-2 w-1/2">
+          <div class=" mb-4">
+            <label for="Habitat" class="leading-7 text-sm text-gray-600">
+                Habitat
+            </label>
+            <select name="Habitat" id="Habitat" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+                <option value="forest">Forest</option>
         <option value="mixed">Mixed</option>
         <option value="forest-gallery">Forest Gallery</option>
         <option value="cold-forest">cold forest</option>
@@ -53,71 +130,168 @@
         <option value="peninsular">peninsular</option>
         <option value="savannah">savannah</option>
         <option value="jungle">jungle/option>
-    </select><br><br>
-    <label for="Cranial-Capacity">Cranial-Capacity:</label>
-    <input type="number" name="Cranial-Capacity" id="Cranial-Capacity" required><br><br>
-    <label for="Height">Height:</label>
-    <input type="number" name="Height" id="Height" required><br><br>
+            </select>
+           
+            
+          </div>
+    </div>
+
     
-    <label for="Incisor_Size">Incisor Size:</label>
-    <select name="Incisor_Size" id="Incisor_Size" required>
-        <option value="small">Small</option>
-        <option value="big">Big</option>
-        <option value="megadony">Megadony</option>
-        <option value="very small">Very Small</option>
-        <option value="medium large">Medium Large</option>
-    </select><br><br>
     
-    <label for="Jaw_Shape">Jaw Shape:</label>
-    <select name="Jaw_Shape" id="Jaw_Shape" required>
+        <div className="px-2 w-1/2">
+          <div class=" mb-4">
+            <label for="Cranial-Capacity" class="leading-7 text-sm text-gray-600">
+                Cranial-Capacity
+            </label>
+            <input
+              type="number"
+              id="Cranial-Capacity"
+              name="Cranial-Capacity"
+              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              required
+              />
+          </div>
+    </div>
+    
+    <div className="px-2 w-1/2">
+          <div class=" mb-4">
+            <label for="Height" class="leading-7 text-sm text-gray-600">
+                Height
+            </label>
+            <input
+              type="number"
+              id="Height"
+              name="Height"
+              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              required
+              />
+          </div>
+    </div>
+   
+  
+    <div className="px-2 w-1/2">
+        <div class=" mb-4">
+          <label for="Incisor_Size" class="leading-7 text-sm text-gray-600">
+            Incisor Size
+          </label>
+          <select name="Incisor_Size" id="Incisor_Size" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+              <option value="forest">Forest</option>
+              <option value="small">Small</option>
+              <option value="big">Big</option>
+              <option value="megadony">Megadony</option>
+              <option value="very small">Very Small</option>
+              <option value="medium large">Medium Large</option>
+          </select>
+         
+          
+        </div>
+  </div>
+
+  <div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Jaw_Shape" class="leading-7 text-sm text-gray-600">
+        Jaw Shape
+      </label>
+      <select name="Jaw_Shape" id="Jaw_Shape" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="U shape">U Shape</option>
         <option value="conical">Conical</option>
         <option value="V shape">V Shape</option>
         <option value="modern">Modern</option>
-    </select><br><br>
-    
-    <label for="Torus_Supraorbital">Torus Supraorbital:</label>
-    <select name="Torus_Supraorbital" id="Torus_Supraorbital" required>
+      </select>
+     
+      
+    </div>
+</div>
+
+
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Torus_Supraorbital" class="leading-7 text-sm text-gray-600">
+        Torus Supraorbital
+      </label>
+      <select name="Torus_Supraorbital" id="Torus_Supraorbital" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="very protruding">Very Protruding</option>
         <option value="little protruding">Little Protruding</option>
         <option value="less protruding">Less Protruding</option>
         <option value="ultra protruding">Ultra Protruding</option>
         <option value="flat">Flat</option>
         <option value="u">u</option>
-    </select><br><br>
-    
-    <label for="Prognathism">Prognathism:</label>
-    <select name="Prognathism" id="Prognathism" required>
+      </select>
+     
+      
+    </div>
+</div>
+  
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Prognathism" class="leading-7 text-sm text-gray-600">
+        Prognathism
+      </label>
+      <select name="Prognathism" id="Prognathism" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="absent">Absent</option>
         <option value="medium">Medium</option>
         <option value="medium-high">Medium-High</option>
         <option value="high">High</option>
         <option value="very high">Very High</option>
         <option value="reduced">Reduced</option>
-    </select><br><br>
-    
-    <label for="Foramen_Mágnum_Position">Foramen MAignum Position:</label>
-    <select name="Foramen_Mágnum_Position" id="Foramen_Mágnum_Position" required>
+      </select>
+     
+      
+    </div>
+</div>
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Foramen_Mágnum_Position" class="leading-7 text-sm text-gray-600">
+        Foramen Mágnum Position
+      </label>
+      <select name="Foramen_Mágnum_Position" id="Foramen_Mágnum_Position" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="posterior">Posterior</option>
         <option value="semi-anterior">Semi-Anterior</option>
         <option value="anterior">Anterior</option>
         <option value="modern">Modern</option>
-    </select><br><br>
+      </select>
+     
+      
+    </div>
+</div>
     
-    <label for="Canine_Size">Canine Size:</label>
-    <select name="Canine_Size" id="Canine_Size" required>
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Canine_Size" class="leading-7 text-sm text-gray-600">
+        Canine Size
+      </label>
+      <select name="Canine_Size" id="Canine_Size" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="small">Small</option>
         <option value="big">Big</option>
-    </select><br><br>
-    
-    <label for="Canines_Shape">Canines Shape:</label>
-    <select name="Canines_Shape" id="Canines_Shape" required>
+      </select>
+     
+      
+    </div>
+</div>
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Canines_Shape" class="leading-7 text-sm text-gray-600">
+        Canines Shape
+      </label>
+      <select name="Canines_Shape" id="Canines_Shape" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="conicalls">Conicalls</option>
         <option value="incisiform">Incisiform</option>
-    </select><br><br>
+      </select>
+     
+      
+    </div>
+</div>
     
-    <label for="Tooth_Enamel">Tooth Enamel:</label>
-    <select name="Tooth_Enamel" id="Tooth_Enamel" required>
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Tooth_Enamel" class="leading-7 text-sm text-gray-600">
+        Tooth Enamel
+      </label>
+      <select name="Tooth_Enamel" id="Tooth_Enamel" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="thin">Thin</option>
         <option value="thick">Thick</option>
         <option value="very thin">Very Thin</option>
@@ -125,101 +299,222 @@
         <option value="medium-thin">Medium Thin</option>
         <option value="medium-thick">Medium Thick</option>
         <option value="thick-medium">Thick Medium</option>
-    </select><br><br>
+      </select>
+     
+      
+    </div>
+</div>
     
-    <label for="Tecno">Tecno:</label>
-    <select name="Tecno" id="Tecno" required>
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Tecno" class="leading-7 text-sm text-gray-600">
+        Tecno
+      </label>
+      <select name="Tecno" id="Tecno" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="yes">Yes</option>
         <option value="no">No</option>
         <option value="likely">Likely</option>
-    </select><br><br>
-    
-    <label for="Tecno_type">Tecno Type:</label>
-    <select name="Tecno_type" id="Tecno_type" required>
+      </select>
+     
+      
+    </div>
+</div>
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Tecno_type" class="leading-7 text-sm text-gray-600">
+        Tecno Type
+      </label>
+      <select name="Tecno_type" id="Tecno_type" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="no">No</option>
         <option value="mode 1">Mode 1</option>
         <option value="mode 2">Mode 2</option>
         <option value="mode 3">Mode 3</option>
         <option value="mode 4">Mode 4</option>
         <option value="primitive">Primitive</option>
-    </select><br><br>
+      </select>
+     
+      
+    </div>
+</div>
+   
     
-    <label for="biped">Biped:</label>
-    <select name="biped" id="biped" required>
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="biped" class="leading-7 text-sm text-gray-600">
+        Biped
+      </label>
+      <select name="biped" id="biped" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="yes">Yes</option>
         <option value="low probability">Low Probability</option>
         <option value="high probability">High Probability</option>
         <option value="modern">Modern</option>
-    </select><br><br>
+      </select>
+     
+      
+    </div>
+</div>
+   
     
-    <label for="Arms">Arms:</label>
-    <select name="Arms" id="Arms" required>
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Arms" class="leading-7 text-sm text-gray-600">
+        Arms
+      </label>
+      <select name="Arms" id="Arms" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="climbing">Climbing</option>
         <option value="walk">Walk</option>
         <option value="manipulate">Manipulate</option>
         <option value="manipulate with precision">Manipulate with Precision</option>
-    </select><br><br>
-    
-    <label for="Foots">Foots:</label>
-    <select name="Foots" id="Foots" required>
+      </select>
+     
+      
+    </div>
+</div>
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Foots" class="leading-7 text-sm text-gray-600">
+        Foots
+      </label>
+      <select name="Foots" id="Foots" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="climbing">Climbing</option>
         <option value="walk">Walk</option>
-    </select><br><br>
-    
-    <label for="Diet">Diet:</label>
-    <select name="Diet" id="Diet" required>
+      </select>
+     
+      
+    </div>
+</div>
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Diet" class="leading-7 text-sm text-gray-600">
+        Diet
+      </label>
+      <select name="Diet" id="Diet" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="dry fruits">Dry Fruits</option>
         <option value="soft fruits">Soft Fruits</option>
         <option value="hard fruits">Hard Fruits</option>
         <option value="omnivore">Omnivore</option>
         <option value="carnivorous">Carnivore</option>
-    </select><br><br>
-    
-    <label for="Sexual_Dimorphism">Sexual Dimorphism:</label>
-    <select name="Sexual_Dimorphism" id="Sexual_Dimorphism" required>
+      </select>
+     
+      
+    </div>
+</div>
+ 
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Sexual_Dimorphism" class="leading-7 text-sm text-gray-600">
+        Sexual Dimorphism
+      </label>
+      <select name="Sexual_Dimorphism" id="Sexual_Dimorphism" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="high">High</option>
        
         <option value="medium-high">Medium-High</option>
         <option value="reduced">Reduced</option>
-    </select><br><br>
-    
-    <label for="Hip">Hip:</label>
-    <select name="Hip" id="Hip" required>
+      </select>
+     
+      
+    </div>
+</div>
+ 
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Hip" class="leading-7 text-sm text-gray-600">
+        Hip
+      </label>
+      <select name="Hip" id="Hip" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="slim">Slim</option>
         <option value="wide">Wide</option>
         <option value="modern">Modern</option>
         <option value="very modern">Very Modern</option>
-    </select><br><br>
-    
-    <label for="Verical_Front">Vertical Front:</label>
-    <select name="Verical_Front" id="Verical_Front" required>
+      </select>
+     
+      
+    </div>
+</div>
+ 
+   
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Verical_Front" class="leading-7 text-sm text-gray-600">
+        Verical Front
+      </label>
+      <select name="Verical_Front" id="Verical_Front" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="yes">Yes</option>
         <option value="no">No</option>
         <option value="modern">Modern</option>
-    </select><br><br>
-    
-    <label for="Anatomy">Anatomy:</label>
-    <select name="Anatomy" id="Anatomy" required>
+      </select>
+     
+      
+    </div>
+</div>
+ 
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Anatomy" class="leading-7 text-sm text-gray-600">
+        Anatomy
+      </label>
+      <select name="Anatomy" id="Anatomy" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="old">Old</option>
         <option value="mixed">Mixed</option>
         <option value="modern">Modern</option>
         <option value="very modern">Very Modern</option>
-    </select><br><br>
-    
-    <label for="Migrated">Migrated:</label>
-    <select name="Migrated" id="Migrated" required>
+      </select>
+     
+      
+    </div>
+</div>
+ 
+
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Migrated" class="leading-7 text-sm text-gray-600">
+        Migrated
+      </label>
+      <select name="Migrated" id="Migrated" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="yes">Yes</option>
         <option value="no">No</option>
-    </select><br><br>
+      </select>
+     
+      
+    </div>
+</div>
     
-    <label for="Skeleton">Skeleton:</label>
-    <select name="Skeleton" id="Skeleton" required>
+    
+<div className="px-2 w-1/2">
+    <div class=" mb-4">
+      <label for="Skeleton" class="leading-7 text-sm text-gray-600">
+        Skeleton
+      </label>
+      <select name="Skeleton" id="Skeleton" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
         <option value="light">Light</option>
         <option value="refined">Refined</option>
         <option value="robust">Robust</option>
-    </select><br><br>
+      </select>
+     
+      
+    </div>
+</div>
     
-    <input type="submit" value="Predict">
+
+    
+ 
+    
+   
+    
+<div>
+    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Predict
+    </button>
+</div>
+</div>
+</div>
 </form>
+</div>
+<!-- </div> -->
 </body>
 </html>
