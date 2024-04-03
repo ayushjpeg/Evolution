@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hominid Prediction</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<h1>Species Prediction Form</h1>
+<form action="/predict" method="post">
+    <label for="Time">Time:</label>
+    <input type="number" name="Time" id="Time" required><br><br>
+
+    <label for="Height">Height:</label>
+    <input type="number" name="Height" id="Height" required><br><br>
+
+
+    <label for="Cranial-Capacity">Cranial-Capacity:</label>
+    <input type="number" name="Cranial-Capacity" id="Cranial-Capacity" required><br><br>
+    
+    <label for="Location">Location:</label>
+    <select name="Location" id="Location" required>
+        <option value="Asia">Asia</option>
+        <option value="Africa">Africa</option>
+        <option value="Europe">Europe</option>
+    </select><br><br>
+    
+    <label for="Zone">Zone:</label>
+    <select name="Zone" id="Zone" required>
+        <option value="west">West</option>
+        <option value="central">Central</option>
+        <option value="oriental">Oriental</option>
+        <option value="south">South</option>
+    </select><br><br>
+    
+    <label for="current-country">Current Country:</label>
+    <select name="current-country" id="current-country" required>
+        <option value="Georgia">Georgia</option>
+        <option value="Germany">Germany</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="Kenya">Kenya</option>
+        <option value="Republic of Chad">Republic of Chad</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Spain">Spain</option>
+    </select><br><br>
+    
+    <label for="Habitat">Habitat:</label>
+    <select name="Habitat" id="Habitat" required>
+        <option value="forest">Forest</option>
+        <option value="mixed">Mixed</option>
+        <option value="forest-gallery">Forest Gallery</option>
+    </select><br><br>
+    
+    <label for="Incisor_Size">Incisor Size:</label>
+    <select name="Incisor_Size" id="Incisor_Size" required>
+        <option value="small">Small</option>
+        <option value="big">Big</option>
+        <option value="megadony">Megadony</option>
+        <option value="very small">Very Small</option>
+        <option value="medium large">Medium Large</option>
+    </select><br><br>
+    
+    <label for="Jaw_Shape">Jaw Shape:</label>
+    <select name="Jaw_Shape" id="Jaw_Shape" required>
+        <option value="U shape">U Shape</option>
+        <option value="conical">Conical</option>
+        <option value="V shape">V Shape</option>
+        <option value="modern">Modern</option>
+    </select><br><br>
+    
+    <label for="Torus_Supraorbital">Torus Supraorbital:</label>
+    <select name="Torus_Supraorbital" id="Torus_Supraorbital" required>
+        <option value="very protruding">Very Protruding</option>
+        <option value="little protruding">Little Protruding</option>
+        <option value="less protruding">Less Protruding</option>
+        <option value="ultra protruding">Ultra Protruding</option>
+        <option value="flat">Flat</option>
+    </select><br><br>
+    
+    <label for="Prognathism">Prognathism:</label>
+    <select name="Prognathism" id="Prognathism" required>
+        <option value="absent">Absent</option>
+        <option value="medium">Medium</option>
+        <option value="medium-high">Medium-High</option>
+        <option value="high">High</option>
+        <option value="very high">Very High</option>
+        <option value="reduced">Reduced</option>
+    </select><br><br>
+    
+    <label for="Foramen_MAignum_Position">Foramen MAignum Position:</label>
+    <select name="Foramen_MAignum_Position" id="Foramen_MAignum_Position" required>
+        <option value="posterior">Posterior</option>
+        <option value="semi-anterior">Semi-Anterior</option>
+        <option value="anterior">Anterior</option>
+        <option value="modern">Modern</option>
+    </select><br><br>
+    
+    <label for="Canine_Size">Canine Size:</label>
+    <select name="Canine_Size" id="Canine_Size" required>
+        <option value="small">Small</option>
+        <option value="big">Big</option>
+    </select><br><br>
+    
+    <label for="Canines_Shape">Canines Shape:</label>
+    <select name="Canines_Shape" id="Canines_Shape" required>
+        <option value="conicalls">Conicalls</option>
+        <option value="incisiform">Incisiform</option>
+    </select><br><br>
+    
+    <label for="Tooth_Enamel">Tooth Enamel:</label>
+    <select name="Tooth_Enamel" id="Tooth_Enamel" required>
+        <option value="thin">Thin</option>
+        <option value="thick">Thick</option>
+        <option value="very thin">Very Thin</option>
+        <option value="very thick">Very Thick</option>
+        <option value="medium thin">Medium Thin</option>
+        <option value="medium thick">Medium Thick</option>
+        <option value="thick medium">Thick Medium</option>
+    </select><br><br>
+    
+    <label for="Tecno">Tecno:</label>
+    <select name="Tecno" id="Tecno" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+        <option value="likely">Likely</option>
+    </select><br><br>
+    
+    <label for="Tecno_type">Tecno Type:</label>
+    <select name="Tecno_type" id="Tecno_type" required>
+        <option value="no">No</option>
+        <option value="mode 1">Mode 1</option>
+        <option value="mode 2">Mode 2</option>
+        <option value="mode 3">Mode 3</option>
+        <option value="mode 4">Mode 4</option>
+        <option value="primitive">Primitive</option>
+    </select><br><br>
+    
+    <label for="biped">Biped:</label>
+    <select name="biped" id="biped" required>
+        <option value="yes">Yes</option>
+        <option value="low probability">Low Probability</option>
+        <option value="high probability">High Probability</option>
+        <option value="modern">Modern</option>
+    </select><br><br>
+    
+    <label for="Arms">Arms:</label>
+    <select name="Arms" id="Arms" required>
+        <option value="climbing">Climbing</option>
+        <option value="walk">Walk</option>
+        <option value="manipulate">Manipulate</option>
+    </select><br><br>
+    
+    <label for="Foots">Foots:</label>
+    <select name="Foots" id="Foots" required>
+        <option value="climbing">Climbing</option>
+        <option value="walk">Walk</option>
+    </select><br><br>
+    
+    <label for="Diet">Diet:</label>
+    <select name="Diet" id="Diet" required>
+        <option value="dry fruits">Dry Fruits</option>
+        <option value="soft fruits">Soft Fruits</option>
+        <option value="hard fruits">Hard Fruits</option>
+        <option value="omnivore">Omnivore</option>
+        <option value="carnivore">Carnivore</option>
+    </select><br><br>
+    
+    <label for="Sexual_Dimorphism">Sexual Dimorphism:</label>
+    <select name="Sexual_Dimorphism" id="Sexual_Dimorphism" required>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Medium_High">Medium-High</option>
+        <option value="Reduced">Reduced</option>
+    </select><br><br>
+    
+    <label for="Hip">Hip:</label>
+    <select name="Hip" id="Hip" required>
+        <option value="slim">Slim</option>
+        <option value="wide">Wide</option>
+        <option value="modern">Modern</option>
+        <option value="very modern">Very Modern</option>
+    </select><br><br>
+    
+    <label for="Verical_Front">Vertical Front:</label>
+    <select name="Verical_Front" id="Verical_Front" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+        <option value="modern">Modern</option>
+    </select><br><br>
+    
+    <label for="Anatomy">Anatomy:</label>
+    <select name="Anatomy" id="Anatomy" required>
+        <option value="old">Old</option>
+        <option value="mixed">Mixed</option>
+        <option value="modern">Modern</option>
+        <option value="very modern">Very Modern</option>
+    </select><br><br>
+    
+    <label for="Migrated">Migrated:</label>
+    <select name="Migrated" id="Migrated" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select><br><br>
+    
+    <label for="Skeleton">Skeleton:</label>
+    <select name="Skeleton" id="Skeleton" required>
+        <option value="light">Light</option>
+        <option value="refined">Refined</option>
+        <option value="robust">Robust</option>
+    </select><br><br>
+    
+    <input type="submit" value="Predict">
+</form>
+</body>
+</html>
