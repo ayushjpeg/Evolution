@@ -51,13 +51,14 @@
             <label for="Time" class="leading-7 text-sm text-gray-600">
               Time
             </label>
-            <input
-              type="number"
-              id="Time"
-              name="Time"
-              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              required
-              />
+            <input type="text"
+       id="Time"
+       name="Time"
+       pattern="^\d*(\.\d+)?$"
+       title="Please enter a valid float number"
+       class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+       required />
+
           </div>
     </div>
 
@@ -143,13 +144,13 @@
             <label for="Cranial-Capacity" class="leading-7 text-sm text-gray-600">
                 Cranial-Capacity
             </label>
-            <input
-              type="number"
-              id="Cranial-Capacity"
-              name="Cranial-Capacity"
-              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              required
-              />
+            <input type="number"
+       id="Cranial-Capacity"
+       name="Cranial-Capacity"
+       step="any"
+       class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+       required />
+
           </div>
     </div>
     
@@ -158,13 +159,14 @@
             <label for="Height" class="leading-7 text-sm text-gray-600">
                 Height
             </label>
-            <input
-              type="number"
-              id="Height"
-              name="Height"
-              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              required
-              />
+            <input type="text"
+            id="Height"
+            name="Height"
+            pattern="^\d*(\.\d+)?$"
+            title="Please enter a valid float number"
+            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            required />
+     
           </div>
     </div>
    

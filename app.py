@@ -145,7 +145,6 @@ def predict():
 
     X_test_scaled = scaler.transform([features])
 
-
     prediction = model.predict(X_test_scaled)
 
 
