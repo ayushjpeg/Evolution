@@ -64,7 +64,9 @@ def predict():
                         1 if habitat == 'forest-gallery' else 0,
                         1 if habitat=='forest-savanna' else 0,
                         1 if habitat=='jungle' else 0,
-                         1 if habitat == 'mixed' else 0])
+                         1 if habitat == 'mixed' else 0,
+                         1 if habitat == 'peninsular' else 0,
+                         1 if habitat == 'savannah' else 0])
 
         
         # Incisor Size
@@ -113,11 +115,11 @@ def predict():
 
         # Arms
         arms = request.form['Arms']
-        features.extend([1 if arms == a else 0 for a in [ 'manipulate','manipulate with precision', 'walk']])
+        features.extend([1 if arms == a else 0 for a in [ 'manipulate','manipulate with precision']])
 
         # Foots
         foots = request.form['Foots']
-        features.extend([1 if foots == f else 0 for f in ['climbing', 'walk']])
+        features.extend([1 if foots == f else 0 for f in ['walk']])
 
         # Diet
         diet = request.form['Diet']
@@ -150,7 +152,9 @@ def predict():
         pass
         
     # Make prediction
+
     X_test_scaled = scaler.transform([features])
+ 
     prediction = model.predict(X_test_scaled)
 
 
